@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "E:\\Web Development Journey\\Day 52 - DotNet\\DOT_NET_inventory project\\DOT_NET_inventory project\\wwwroot\\images\\Booknest.png",
+      "PackagePath": "staticwebassets\\images\\Booknest.png"
+    },
+    {
       "Id": "E:\\Web Development Journey\\Day 52 - DotNet\\DOT_NET_inventory project\\DOT_NET_inventory project\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "HGNbHp6hDV6RelzQetFhujGn7PBgFRlsvFuCnlNa3AQ=",
+  "Hash": "+mAdAYoFPwnOB6NsqPnlB6hs6aZBighih2Rqms4Z8nQ=",
   "Source": "DOT_NET_inventory project",
   "BasePath": "_content/DOT_NET_inventory project",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "E:\\Web Development Journey\\Day 52 - DotNet\\DOT_NET_inventory project\\DOT_NET_inventory project\\wwwroot\\images\\Booknest.png",
+      "SourceId": "DOT_NET_inventory project",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Web Development Journey\\Day 52 - DotNet\\DOT_NET_inventory project\\DOT_NET_inventory project\\wwwroot\\",
+      "BasePath": "_content/DOT_NET_inventory project",
+      "RelativePath": "images/Booknest.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Booknest.png"
     },
     {
       "Identity": "E:\\Web Development Journey\\Day 52 - DotNet\\DOT_NET_inventory project\\DOT_NET_inventory project\\wwwroot\\js\\site.js",

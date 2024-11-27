@@ -15,6 +15,7 @@ namespace DOT_NET_inventory_project.Controllers
             dbContext = new AppDBContext();
         }
 
+        // Index method to fetch all book items
         public IActionResult Index()
         {
             List<BookItem> books = new List<BookItem>();
@@ -31,12 +32,12 @@ namespace DOT_NET_inventory_project.Controllers
                 {
                     BookItem book = new BookItem
                     {
-                        Id = Convert.ToInt32(reader["Id"]),
-                        Title = reader["Title"].ToString(),
-                        Author = reader["Author"].ToString(),
-                        Price = Convert.ToDecimal(reader["Price"]),
-                        Stock = Convert.ToInt32(reader["Stock"]),
-                        Category = reader["Category"].ToString()
+                        Id = reader["Id"] != DBNull.Value ? Convert.ToInt32(reader["Id"]) : 0,
+                        Title = reader["Title"]?.ToString(),
+                        Author = reader["Author"]?.ToString(),
+                        Price = reader["Price"] != DBNull.Value ? Convert.ToDecimal(reader["Price"]) : 0,
+                        Stock = reader["Stock"] != DBNull.Value ? Convert.ToInt32(reader["Stock"]) : 0,
+                        Category = reader["Category"]?.ToString()
                     };
                     books.Add(book);
                 }
@@ -46,27 +47,26 @@ namespace DOT_NET_inventory_project.Controllers
             return View(books);
         }
 
+        // Display Add Book form
         [HttpGet]
         public ActionResult AddBook()
         {
-            // Removed the category retrieval code
-
             return View();
         }
 
+        // Handle Add Book form submission
         [HttpPost]
         public ActionResult AddBook(BookItem book)
         {
             using (SqlConnection conn = new SqlConnection(dbContext.ConnectionString))
             {
-                // Ensure the correct SQL command for inserting a new book
                 string query = "INSERT INTO BookItems (Title, Author, Price, Stock, Category) VALUES (@Title, @Author, @Price, @Stock, @Category)";
                 SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@Title", book.Title);
-                cmd.Parameters.AddWithValue("@Author", book.Author);
+                cmd.Parameters.AddWithValue("@Title", book.Title ?? string.Empty);
+                cmd.Parameters.AddWithValue("@Author", book.Author ?? string.Empty);
                 cmd.Parameters.AddWithValue("@Price", book.Price);
                 cmd.Parameters.AddWithValue("@Stock", book.Stock);
-                cmd.Parameters.AddWithValue("@Category", book.Category);
+                cmd.Parameters.AddWithValue("@Category", book.Category ?? string.Empty);
 
                 conn.Open();
                 cmd.ExecuteNonQuery();
@@ -76,10 +76,12 @@ namespace DOT_NET_inventory_project.Controllers
             return RedirectToAction("Index");
         }
 
+        // Display Update Book form
         [HttpGet]
         public ActionResult UpdateBook(int id)
         {
             BookItem book = new BookItem();
+
             using (SqlConnection conn = new SqlConnection(dbContext.ConnectionString))
             {
                 string query = "SELECT * FROM BookItems WHERE Id=@Id";
@@ -91,12 +93,12 @@ namespace DOT_NET_inventory_project.Controllers
 
                 if (reader.Read())
                 {
-                    book.Id = Convert.ToInt32(reader["Id"]);
-                    book.Title = reader["Title"].ToString();
-                    book.Author = reader["Author"].ToString();
-                    book.Price = Convert.ToDecimal(reader["Price"]);
-                    book.Stock = Convert.ToInt32(reader["Stock"]);
-                    book.Category = reader["Category"].ToString();
+                    book.Id = reader["Id"] != DBNull.Value ? Convert.ToInt32(reader["Id"]) : 0;
+                    book.Title = reader["Title"]?.ToString();
+                    book.Author = reader["Author"]?.ToString();
+                    book.Price = reader["Price"] != DBNull.Value ? Convert.ToDecimal(reader["Price"]) : 0;
+                    book.Stock = reader["Stock"] != DBNull.Value ? Convert.ToInt32(reader["Stock"]) : 0;
+                    book.Category = reader["Category"]?.ToString();
                 }
                 conn.Close();
             }
@@ -107,6 +109,7 @@ namespace DOT_NET_inventory_project.Controllers
             return View(book);
         }
 
+        // Handle Update Book form submission
         [HttpPost]
         public ActionResult UpdateBook(BookItem book)
         {
@@ -120,11 +123,11 @@ namespace DOT_NET_inventory_project.Controllers
                                     Category=@Category
                                 WHERE Id=@Id";
                 SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@Title", book.Title);
-                cmd.Parameters.AddWithValue("@Author", book.Author);
+                cmd.Parameters.AddWithValue("@Title", book.Title ?? string.Empty);
+                cmd.Parameters.AddWithValue("@Author", book.Author ?? string.Empty);
                 cmd.Parameters.AddWithValue("@Price", book.Price);
                 cmd.Parameters.AddWithValue("@Stock", book.Stock);
-                cmd.Parameters.AddWithValue("@Category", book.Category);
+                cmd.Parameters.AddWithValue("@Category", book.Category ?? string.Empty);
                 cmd.Parameters.AddWithValue("@Id", book.Id);
 
                 conn.Open();
@@ -135,7 +138,7 @@ namespace DOT_NET_inventory_project.Controllers
             return RedirectToAction("Index");
         }
 
-        // Delete BookItem by Id
+        // Handle Delete Book operation
         [HttpPost]
         public ActionResult DeleteBook(int id)
         {

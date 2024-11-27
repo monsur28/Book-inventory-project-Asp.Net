@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DOT_NET_inventory project")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d2c81e932ba48443ceb0f862fedfa31d1f261cf2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3aa19262fdba936e67e0a454d4960df795a47973")]
 [assembly: System.Reflection.AssemblyProductAttribute("DOT_NET_inventory project")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DOT_NET_inventory project")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

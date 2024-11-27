@@ -256,3 +256,4 @@ E:\Web Development Journey\Day 52 - DotNet\DOT_NET_inventory project\DOT_NET_inv
 E:\Web Development Journey\Day 52 - DotNet\DOT_NET_inventory project\DOT_NET_inventory project\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
 E:\Web Development Journey\Day 52 - DotNet\DOT_NET_inventory project\DOT_NET_inventory project\obj\Debug\net8.0\DOT_NET_inventory project.csproj.AssemblyReference.cache
 E:\Web Development Journey\Day 52 - DotNet\DOT_NET_inventory project\DOT_NET_inventory project\obj\Debug\net8.0\DOT_NET_.F604D959.Up2Date
+E:\Web Development Journey\Day 52 - DotNet\DOT_NET_inventory project\DOT_NET_inventory project\bin\Debug\net8.0\package.json

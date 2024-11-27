@@ -2,8 +2,89 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <h2>Let's Do</h2>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="text-center relative">
+    <!-- Banner Section with Animation -->
+    <div class="banner animate__animated animate__fadeIn display-4 w-full h-[500px] relative overflow-hidden rounded-lg" style="background-image: url('/images/Booknest.png'); background-size: cover; background-position: center; padding: 70px 20px; color: white; text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);">
+        <h1 class="display-4">Welcome to BookNest</h1>
+        <a href="/BookItem" class="btn btn-light btn-lg" style="color: #6f42c1; font-weight: bold;">Browse Collections</a>
+    </div>
+
+<!-- Featured Section -->
+<div class="row justify-content-center mb-4">
+    <div class="col-lg-8">
+        <h2 class="animate__animated animate__fadeIn">Why Choose BookNest?</h2>
+        <p class="lead animate__animated animate__fadeIn">At BookNest, we curate the finest collection of books to cater to every reader. Explore our wide range of genres, from gripping novels to enlightening non-fiction.</p>
+    </div>
 </div>
+
+<!-- Featured Book Cards with Hover Effects and Animations -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <!-- First Book Card -->
+            <div class="col-md-4">
+                <div class="card shadow-sm mb-4 hover-shadow" style="transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/The_Great_Gatsby_Cover_1925_Retouched.jpg/800px-The_Great_Gatsby_Cover_1925_Retouched.jpg" class="card-img-top" alt="The Great Gatsby" style="border-radius: 8px;">
+                    <div class="card-body">
+                        <h5 class="card-title">The Great Gatsby</h5>
+                        <p class="card-text">A timeless classic by F. Scott Fitzgerald that captures the essence of the Roaring Twenties.</p>
+                        <a href="/bookdetails/1" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second Book Card -->
+            <div class="col-md-4">
+                <div class="card shadow-sm mb-4 hover-shadow" style="transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <img src="https://booknest-self.vercel.app/_next/image?url=https%3A%2F%2Fi.ibb.co.com%2FR3V6F0L%2F1984.jpg&w=1920&q=75" class="card-img-top" alt="1984" style="border-radius: 8px;">
+                    <div class="card-body">
+                        <h5 class="card-title">1984</h5>
+                        <p class="card-text">George Orwell’s chilling dystopian masterpiece that remains ever-relevant.</p>
+                        <a href="/bookdetails/3" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Third Book Card -->
+            <div class="col-md-4">
+                <div class="card shadow-sm mb-4 hover-shadow" style="transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <img src="https://booknest-self.vercel.app/_next/image?url=https%3A%2F%2Fi.ibb.co.com%2FjyK6z4h%2FBecoming.jpg&w=1920&q=75" class="card-img-top" alt="Becoming" style="border-radius: 8px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Becoming</h5>
+                        <p class="card-text">Michelle Obama’s deeply personal memoir that inspires and empowers.</p>
+                        <a href="/bookdetails/8" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- CTA Section with Animation -->
+<div class="cta mt-5" style="background-color: #f8f9fa; padding: 40px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+    <h2 class="animate__animated animate__fadeIn">Join Our Community</h2>
+    <p>Become a part of the BookNest family and enjoy exclusive deals, personalized recommendations, and much more!</p>
+    <a href="/signup" class="btn btn-success btn-lg">Sign Up Now</a>
+</div>
+
+<!-- Additional Custom CSS for Animations and Hover Effects -->
+<style>
+    .hover-shadow:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn {
+        border-radius: 5px;
+    }
+
+    .banner {
+        position: relative;
+    }
+
+        .banner button {
+            transition: background-color 0.3s ease;
+        }
+
+            .banner button:hover {
+                background-color: rgba(255, 255, 255, 0.8);
+            }
+</style>
